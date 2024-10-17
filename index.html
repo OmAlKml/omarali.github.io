@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Omar Ali - Mobile Software Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --background-color-light: #ffffff;
+            --background-color-dark: #212529;
+            --text-color-light: #333333;
+            --text-color-dark: #f8f9fa;
+            --card-bg-light: #f8f9fa;
+            --card-bg-dark: #343a40;
+            --footer-bg-light: #f8f9fa;
+            --footer-bg-dark: #343a40;
+            --footer-text-light: #333333;
+            --footer-text-dark: #f8f9fa;
+        }
+
+        [data-bs-theme="dark"] {
+            --primary-color: #0d6efd;
+            --background-color: var(--background-color-dark);
+            --text-color: var(--text-color-dark);
+            --card-bg: var(--card-bg-dark);
+            --footer-bg: var(--footer-bg-dark);
+            --footer-text: var(--footer-text-dark);
+        }
+
+        [data-bs-theme="light"] {
+            --primary-color: #007bff;
+            --background-color: var(--background-color-light);
+            --text-color: #333; /* Dark text for light mode */
+            --card-bg: var(--card-bg-light);
+            --footer-bg: var(--footer-bg-light);
+            --footer-text: var(--footer-text-light);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            background-color: var(--background-color) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1030;
+        }
+
+        .skills-container {
+            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap; /* Allow skills to wrap to the next line */
+            gap: 10px; /* Spacing between skill chips */
+            justify-content: flex-start; /* Align items to the left */
+        }
+
+        .skill-chip {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 25px;
+            transition: transform 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        h2.section-title,
+        h1#summaryTitle {
+            color: var(--text-color);
+        }
+
+        [data-bs-theme="light"] h2.section-title,
+        [data-bs-theme="light"] h1#summaryTitle {
+            color: #000; /* Black text for light mode */
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a id="navTitle" class="navbar-brand fw-bold" href="#">Omar Ali</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#summary">Summary</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#references">Books & References</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
+                </ul>
+                <div class="theme-toggle" id="themeToggle" style="cursor: pointer;">
+                    <i class="bi bi-moon-fill"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <section class="mb-5">
+            <h1 id="summaryTitle" class="display-4 fw-bold">About Me</h1>
+            <p id="summary" class="lead">I'm Omar Ali, a passionate Flutter developer dedicated to creating innovative mobile applications that enhance user experiences. I thrive in collaborative environments and embrace challenges that require creative problem-solving.</p>
+        </section>
+
+        <section id="skills" class="mb-5">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container" id="skillsContainer">
+                <span class="skill-chip">Android</span>
+                <span class="skill-chip">Flutter</span>
+                <span class="skill-chip">Java</span>
+                <span class="skill-chip">Dart</span>
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">HTML</span>
+                <span class="skill-chip">CSS</span>
+                <span class="skill-chip">Data Structures</span>
+                <span class="skill-chip">Git</span>
+                <span class="skill-chip">GitHub</span>
+                <span class="skill-chip">SQL</span>
+                <span class="skill-chip">Real-time apps</span>
+                <span class="skill-chip">Threading & Concurrency</span>
+                <span class="skill-chip">Functional programming</span>
+                <span class="skill-chip">CoreData</span>
+                <span class="skill-chip">HockeyApp</span>
+                <span class="skill-chip">GoF Design Patterns</span>
+                <span class="skill-chip">Head First Design Patterns</span>
+                <span class="skill-chip">Modular architecture</span>
+                <span class="skill-chip">Xcode</span>
+                <span class="skill-chip">AppCode</span>
+                <span class="skill-chip">Android Studio</span>
+                <span class="skill-chip">Fleet</span>
+                <span class="skill-chip">VSCode</span>
+            </div>
+        </section>
+
+        <section id="references" class="mb-5">
+            <h2 class="section-title">Books & References</h2>
+            <ul class="list-group" id="referencesContainer">
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/exec/obidos/ASIN/0735619670/codihorr-20?ref=blog.codinghorror.com" target="_blank">Code Complete: A Practical Handbook of Software Construction, Second Edition</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/exec/obidos/ASIN/0321965515/codihorr-20?ref=blog.codinghorror.com" target="_blank">Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability (3rd Edition)</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/exec/obidos/ASIN/0932633439/codihorr-20?ref=blog.codinghorror.com" target="_blank">Peopleware: Productive Projects and Teams</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/exec/obidos/ASIN/020161622X/codihorr-20?ref=blog.codinghorror.com" target="_blank">The Pragmatic Programmer: From Journeyman to Master</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/exec/obidos/ASIN/0321117425/codihorr-20?ref=blog.codinghorror.com" target="_blank">Facts and Fallacies of Software Engineering</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612" target="_blank">Design Patterns: Elements of Reusable Object-Oriented Software</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code by Robert C. Martin</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X/ref=sr_1_1" target="_blank">Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Head-First-Statistics-Brain-Friendly-Guide/dp/0596527586/ref=sr_1_1" target="_blank">Head First Statistics: A Brain-Friendly Guide</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Java-Complete-Reference-Thirteenth/dp/1265058431/ref=sr_1_1" target="_blank">Java: The Complete Reference</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Grokking-Algorithms-Second-Aditya-Bhargava/dp/1633438538/ref=sr_1_1" target="_blank">Grokking Algorithms</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Turn-Ship-Around-Turning-Followers/dp/B08V4TFFCK/ref=sr_1_1" target="_blank">Turn the Ship Around!: A True Story of Turning Followers into Leaders</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Habits-Highly-Effective-People-Anniversary/dp/B086DD5KSJ/ref=sr_1_1" target="_blank">The 7 Habits of Highly Effective People</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/dp/1449373321/?bestFormat=true&k=designing%20data%20intensive&ref_=nb_sb_ss_w_scx-ent-pd-bk-d_de_k0_1_19&crid=2R96ONYG6AG1K&sprefix=Designing%20data%20inte" target="_blank">Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118093755/ref=dp_ob_title_bk" target="_blank">Operating System Concepts</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Modern-Operating-Systems-Andrew-Tanenbaum/dp/013359162X/ref=sr_1_1" target="_blank">Modern Operating Systems</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_1" target="_blank">Cracking the Coding Interview: 189 Programming Questions and Solutions</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Designing-Distributed-Systems-Patterns-Paradigms/dp/1491983647/ref=sr_1_1" target="_blank">Designing Distributed Systems: Patterns and Paradigms for Scalable, Reliable Services</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658/ref=sr_1_1" target="_blank">Extreme Programming Explained: Embrace Change, 2nd Edition</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://cs193p.sites.stanford.edu/" target="_blank">Stanford | CS193p - Developing Apps for iOS</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="connect" class="mb-5">
+            <h2 class="section-title">Connect and Social Media</h2>
+            <div class="d-flex flex-wrap justify-content-center" id="social-links">
+                <a href="https://www.linkedin.com/in/omar-ali-54b136330/" title="LinkedIn" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/OmarAliKml" title="GitHub" class="social-icon"><i class="bi bi-github"></i></a>
+                <a href="https://twitter.com/OmAlKml" title="Twitter" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="mailto:omar.ali.kml@gmail.com" title="Email" class="social-icon"><i class="bi bi-envelope"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="py-3 mt-5">
+        <div class="container">
+            <p id="copyrights" class="text-center mb-0">&copy; 2024 Omar Ali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('themeToggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            if (body.hasAttribute('data-bs-theme') && body.getAttribute('data-bs-theme') === 'dark') {
+                body.setAttribute('data-bs-theme', 'light');
+                toggleButton.innerHTML = '<i class="bi bi-sun-fill"></i>'; // Sun icon for light mode
+            } else {
+                body.setAttribute('data-bs-theme', 'dark');
+                toggleButton.innerHTML = '<i class="bi bi-moon-fill"></i>'; // Moon icon for dark mode
+            }
+        });
+    </script>
+</body>
+</html>
